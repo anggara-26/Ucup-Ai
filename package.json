@@ -1,0 +1,24 @@
+{
+  "name": "ucup-ai",
+  "version": "1.0.0",
+  "description": "Implementasi ChatGPT ke dalam whatsapp.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anggara-26/Ucup-Ai.git"
+  },
+  "author": "Anggara Roshandi Putra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anggara-26/Ucup-Ai/issues"
+  },
+  "homepage": "https://github.com/anggara-26/Ucup-Ai#readme",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.22.1"
+  }
+}
