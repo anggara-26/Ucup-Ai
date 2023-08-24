@@ -18,6 +18,7 @@ const client = new Client({
 client.on("qr", (qr) => {
   // Generate and scan this code with your phone
   qrcode.generate(qr, { small: true });
+  console.log(qr);
 });
 
 client.on("ready", () => {
