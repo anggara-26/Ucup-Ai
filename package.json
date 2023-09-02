@@ -2,10 +2,10 @@
   "name": "ucup-ai",
   "version": "1.0.0",
   "description": "Implementasi ChatGPT ke dalam whatsapp.",
-  "main": "index.js",
+  "main": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx vite-node src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/anggara-26/Ucup-Ai#readme",
   "dependencies": {
+    "ai": "^2.2.11",
     "dotenv": "^16.3.1",
-    "mongoose": "^7.4.3",
-    "openai": "^4.0.1",
+    "langchain": "^0.0.140",
     "qrcode-terminal": "^0.12.0",
-    "whatsapp-web.js": "https://github.com/Julzk/whatsapp-web.js/tarball/jkr_hotfix_8",
-    "wwebjs-mongo": "^1.1.0"
+    "vite-node": "^0.34.3",
+    "whatsapp-web.js": "https://github.com/Julzk/whatsapp-web.js/tarball/jkr_hotfix_8"
   }
 }
