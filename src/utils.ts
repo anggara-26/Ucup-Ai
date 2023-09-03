@@ -1,6 +1,8 @@
 import { AIMessage, HumanMessage } from "langchain/schema";
 import { Client, Message } from "whatsapp-web.js";
 
+const FETCH_MESSAGES_LIMIT = 15;
+
 export const convertWhatsappMessageToLangChainMessage = async (
   messages: Message[] | []
 ): Promise<AIMessage[] | HumanMessage[] | []> => {
@@ -22,5 +24,5 @@ export const getUserChatsHistory = async (
   const user = chats.find((chat) => {
     return chat.id._serialized === from;
   });
-  return (await user?.fetchMessages({ limit: 25 })) ?? [];
+  return (await user?.fetchMessages({ limit: FETCH_MESSAGES_LIMIT })) ?? [];
 };
