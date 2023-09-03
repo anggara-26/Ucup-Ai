@@ -9,3 +9,7 @@ export function qrCodeCli(qr: string) {
   console.log(clc.blue("QR Code Text: ") + qr);
   qrcode.generate(qr, { small: true });
 }
+
+export function errorCli(error: string) {
+  console.log(clc.red.bold(error));
+}
