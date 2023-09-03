@@ -51,11 +51,7 @@ const useRemoteAuth = async (uri: string) => {
         backupSyncIntervalMs: 300000,
       }),
       puppeteer: {
-        args: [
-          "--no-sandbox",
-          "--disable-dev-shm-usage",
-          "--disable-setuid-sandbox",
-        ],
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
       },
     });
   });
@@ -66,11 +62,7 @@ const useLocalAuth = () => {
   return new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
-      args: [
-        "--no-sandbox",
-        "--disable-dev-shm-usage",
-        "--disable-setuid-sandbox",
-      ],
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
     },
   });
 };
