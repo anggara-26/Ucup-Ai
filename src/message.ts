@@ -5,7 +5,10 @@ import {
 } from "./utils";
 import { aiResponse } from "./ai";
 
-export async function handleMessage(client: Client, message: Message) {
+export async function handleMessage(
+  client: Client,
+  message: Message
+): Promise<string> {
   const history = await getUserChatsHistory(client, message.from);
   const previousMessages = await convertWhatsappMessageToLangChainMessage(
     history.slice(0, -1)

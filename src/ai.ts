@@ -19,7 +19,7 @@ export async function aiResponse(
 
   const executor = await initializeAgentExecutorWithOptions(tools, model, {
     agentType: "openai-functions",
-    verbose: true,
+    verbose: process.env.NODE_ENV !== "production",
     memory: new BufferMemory({
       memoryKey: "chat_history",
       chatHistory: new ChatMessageHistory(previousMessages),

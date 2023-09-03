@@ -5,7 +5,8 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "start": "npx vite-node src/index.ts"
+    "start": "cross-env NODE_ENV=production npx vite-node src/index.ts",
+    "dev": "npx vite-node src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,10 @@
   "bugs": {
     "url": "https://github.com/anggara-26/Ucup-Ai/issues"
   },
-  "homepage": "https://github.com/anggara-26/Ucup-Ai#readme",
   "dependencies": {
     "ai": "^2.2.11",
+    "cli-color": "^2.0.3",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.3.1",
     "langchain": "^0.0.140",
     "qrcode-terminal": "^0.12.0",

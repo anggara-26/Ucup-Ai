@@ -1,13 +1,13 @@
 import "dotenv/config";
 
-import qrcode from "qrcode-terminal";
 import whatsappWeb from "whatsapp-web.js";
 import { handleMessage } from "./message";
-const { Client, LocalAuth } = whatsappWeb;
+import { qrCodeCli, readyCli } from "./cli";
+const { Client } = whatsappWeb;
 
 async function main() {
   const client = new Client({
-    authStrategy: new LocalAuth(),
+    // authStrategy: new LocalAuth(),
     puppeteer: {
       args: [
         "--no-sandbox",
@@ -17,21 +17,14 @@ async function main() {
     },
   });
 
-  client.on("qr", (qr) => {
-    // Generate and scan this code with your phone
-    qrcode.generate(qr, { small: true });
-    console.log(qr);
-  });
+  client.on("qr", qrCodeCli); // show qrcode & qrcode text
 
-  client.on("ready", () => {
-    console.log("Ucup is ready!");
-  });
+  client.on("ready", readyCli); // Show something to console when the bot is ready.
 
   client.on("message", async (msg) => {
     if (!msg.fromMe) {
       const response = await handleMessage(client, msg);
-      console.log(response);
-      client.sendMessage(msg.from, `${response}`);
+      client.sendMessage(msg.from, response);
     }
   });
 
