@@ -10,6 +10,10 @@ export function qrCodeCli(qr: string) {
   qrcode.generate(qr, { small: true });
 }
 
+export function useAuthStrategyCli(strategy: string) {
+  console.log(clc.green(`Using ${strategy} Strategy`));
+}
+
 export function errorCli(error: string) {
   console.log(clc.red.bold(error));
 }
