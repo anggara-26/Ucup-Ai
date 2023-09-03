@@ -1,9 +1,10 @@
-import { Client, LocalAuth, RemoteAuth, Message } from "whatsapp-web.js";
+import whatsappWeb, { Client, Message } from "whatsapp-web.js";
+const { LocalAuth, RemoteAuth } = whatsappWeb;
 import { MongoStore } from "wwebjs-mongo";
 import mongoose from "mongoose";
 import { AIMessage, HumanMessage } from "langchain/schema";
 import { LangChainMessage } from "./types";
-import { useAuthStrategyCli } from "./cli";
+import { useAuthStrategyCli } from "./cli.js";
 
 const FETCH_MESSAGES_LIMIT = 15;
 

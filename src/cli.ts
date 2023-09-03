@@ -14,6 +14,8 @@ export function useAuthStrategyCli(strategy: string) {
   console.log(clc.green(`Using ${strategy} Strategy`));
 }
 
-export function errorCli(error: string) {
-  console.log(clc.red.bold(error));
+export function errorCli(error: unknown) {
+  error instanceof Error
+    ? console.log(clc.red.bold(error.message))
+    : console.log(clc.red.bold(`Unexpected error: ${error}`));
 }

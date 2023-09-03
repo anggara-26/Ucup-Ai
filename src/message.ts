@@ -2,8 +2,8 @@ import { Client, Message } from "whatsapp-web.js";
 import {
   convertWhatsappMessageToLangChainMessage,
   getUserChatsHistory,
-} from "./utils";
-import { aiResponse } from "./ai";
+} from "./utils.js";
+import { aiResponse } from "./ai.js";
 
 export async function handleMessage(
   client: Client,
