@@ -13,7 +13,7 @@ Feature request? Check the past discussions to see if it has been brought up pre
 
 ## Motivation
 
-I was bored and finally thought about trying ChatGPT from OpenAi and I thought it would be easier if I could just chat with ChatGPT from WhatsApp.
+I was bored and finally thought about trying ChatGPT from OpenAi and I thought it would be fun if I could just chat with ChatGPT from WhatsApp.
 
 I looked for references for this and there are still very few open-source that specifically shows what I need, so I made this project open-source so hopefully it can be useful for those who need it.
 
