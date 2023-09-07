@@ -18,7 +18,9 @@ async function main() {
   client.on("message", async (msg: Message) => {
     try {
       if (!msg.fromMe) {
+        console.log(msg.body);
         const response = await handleMessage(client, msg); // Handle incoming message and return a response message
+        console.log(response);
         client.sendMessage(msg.from, response); // Send response message to user
       }
     } catch (err) {
